@@ -55,3 +55,26 @@ export interface GetTransactionsResponse {
   createdAt: string;
   updatedAt: string;
 }
+
+export interface GetTablesResponse {
+  Rk: number;
+  Squad: string;
+  MP: number;
+  W: number;
+  D: number;
+  L: number;
+  GF: number;
+  GA: number;
+  GD: number;
+  Pts: number;
+  "Pts/MP": number;
+  xG: number;
+  xGA: number;
+  xGD: number;
+  "xGD/90": number;
+  "Last 5": string;
+  Attendance: number;
+  "Top Team Scorer": string;
+  Goalkeeper: string;
+  Notes: string;
+}

@@ -5,6 +5,7 @@ import {
   useGetKpisQuery,
   useGetProductsQuery,
   useGetTransactionsQuery,
+  useGetTablesQuery,
 } from "@/state/api";
 import { Box, Typography, useTheme } from "@mui/material";
 import { DataGrid, GridCellParams } from "@mui/x-data-grid";
@@ -18,7 +19,8 @@ const Row3 = () => {
   const { data: kpiData } = useGetKpisQuery();
   const { data: productData } = useGetProductsQuery();
   const { data: transactionData } = useGetTransactionsQuery();
-
+  const {data: tableData}= useGetTablesQuery();
+  console.log(tableData);
   const pieChartData = useMemo(() => {
     if (kpiData) {
       const totalExpenses = kpiData[0].totalExpenses;
@@ -39,23 +41,23 @@ const Row3 = () => {
     }
   }, [kpiData]);
 
-  const productColumns = [
+  const tableColumns = [
     {
-      field: "_id",
-      headerName: "id",
+      field: "Squad",
+      headerName: "Squad",
       flex: 1,
     },
     {
-      field: "expense",
-      headerName: "Expense",
+      field: "Rk",
+      headerName: "Ranking",
       flex: 0.5,
-      renderCell: (params: GridCellParams) => `$${params.value}`,
+      renderCell: (params: GridCellParams) => params.value,
     },
     {
-      field: "price",
-      headerName: "Price",
+      field: "Pts",
+      headerName: "Pts",
       flex: 0.5,
-      renderCell: (params: GridCellParams) => `$${params.value}`,
+      renderCell: (params: GridCellParams) => params.value,
     },
   ];
 
@@ -89,8 +91,8 @@ const Row3 = () => {
     <>
       <DashboardBox gridArea="g">
         <BoxHeader
-          title="List of Products"
-          sideText={`${productData?.length} products`}
+          title="Tabla General"
+          sideText={`${tableData?.length} teams`}
         />
         <Box
           mt="0.5rem"
@@ -116,8 +118,8 @@ const Row3 = () => {
             columnHeaderHeight={25}
             rowHeight={35}
             hideFooter={true}
-            rows={productData || []}
-            columns={productColumns}
+            rows={tableData || []}
+            columns={tableColumns}
           />
         </Box>
       </DashboardBox>
