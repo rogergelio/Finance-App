@@ -12,8 +12,9 @@ import tableRoutes from "./routes/table.js"
 import KPI from "./models/KPI.js";
 import Product from "./models/Product.js";
 import Transaction from "./models/Transaction.js";
-import { kpis, products, transactions,tables2 } from "./data/data.js";
+import { kpis, products, transactions,tables2, competitions } from "./data/data.js";
 import Table from "./models/Table.js";
+import Competition from "./models/Competition.js";
 
 /* CONFIGURATIONS */
 dotenv.config();
@@ -47,6 +48,7 @@ mongoose
      //KPI.insertMany(kpis);
      //Product.insertMany(products);
      //Transaction.insertMany(transactions);
-     Table.insertMany(tables2)
+     //Table.insertMany(tables2)
+     //Competition.insertMany(competitions)
   })
   .catch((error) => console.log(`${error} did not connect`));

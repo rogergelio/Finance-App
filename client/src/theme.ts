@@ -11,8 +11,8 @@ export const tokens = {
     900: "#242427",
   },
   primary: {
-    // light green
-    100: "#fbf7e5",
+  // light green
+  100: "#fbf7e5",
   200: "#f7efbb",
   300: "#f3e793",
   400: "#efdf69",
@@ -24,7 +24,7 @@ export const tokens = {
   },
   secondary: {
     // yellow
-    100: "#eaf3fa",
+  100: "#eaf3fa",
   200: "#c6e0f1",
   300: "#a2cde8",
   400: "#7ebbe0",
